@@ -102,6 +102,7 @@ struct rkisp1_sensor_info {
  * @params_vdev: ISP input parameters device
  */
 struct rkisp1_device {
+	struct regmap *grf;
 	void __iomem *base_addr;
 	int irq;
 	struct device *dev;
