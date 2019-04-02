@@ -235,6 +235,10 @@
 	status = "okay";
 };
 
+&i2c0 {
+	status = "okay";
+};
+
 &i2c1 {
 	status = "okay";
 
@@ -370,6 +374,18 @@
 				};
 			};
 		};
+	};
+
+	hym8563: hym8563@51 {
+		compatible = "haoyu,hym8563";
+		reg = <0x51>;
+		status = "okay";
+	};
+
+	aw2015: aw2015@64 {
+		compatible = "awinic,aw2015";
+		status = "okay";
+		reg = <0x64>;
 	};
 };
 
