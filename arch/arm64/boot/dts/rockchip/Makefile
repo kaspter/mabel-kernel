@@ -25,6 +25,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-box-liantong-avb.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb-android.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-evb-android-avb.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-mabel.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64-android.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3328-rock64-android-avb.dtb
