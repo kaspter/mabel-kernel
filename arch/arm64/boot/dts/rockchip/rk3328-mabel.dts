@@ -139,6 +139,24 @@
 		#clock-cells = <0>;
 	};
 
+
+
+	wireless-bluetooth {
+		compatible = "bluetooth-platdata";
+		clocks = <&rk805 1>;
+		clock-names = "ext_clock";
+		uart_rts_gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
+		pinctrl-names = "default", "rts_gpio";
+		pinctrl-0 = <&uart0_rts>;
+		pinctrl-1 = <&uart0_gpios>;
+		//BT,power_gpio = <&gpio1 RK_PC5 GPIO_ACTIVE_HIGH>;
+		BT,reset_gpio    = <&gpio1 RK_PC5 GPIO_ACTIVE_HIGH>;  // reset bt core
+		BT,wake_gpio     = <&gpio2 RK_PC2 GPIO_ACTIVE_HIGH>;  // wakeup bt
+		BT,wake_host_irq = <&gpio1 RK_PD2 GPIO_ACTIVE_HIGH>;  // wakeup host
+
+		status = "okay";
+	};
+
 	wireless-wlan {
 		compatible = "wlan-platdata";
 		rockchip,grf = <&grf>;
@@ -147,6 +165,7 @@
 		WIFI,host_wake_irq = <&gpio1 RK_PC3 GPIO_ACTIVE_HIGH>;
 		status = "okay";
 	};
+
 };
 
 &cpu0 {
@@ -457,6 +476,13 @@
 				<0 RK_PD3 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
+
+	wireless-bluetooth {
+		uart0_gpios: uart0-gpios {
+		rockchip,pins =
+			<1 10 RK_FUNC_GPIO &pcfg_pull_none>;
+		};
+	};
 };
 
 &rkvdec {
@@ -506,6 +532,12 @@
 };
 
 &tsadc {
+	status = "okay";
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_xfer &uart0_cts>;
 	status = "okay";
 };
 
