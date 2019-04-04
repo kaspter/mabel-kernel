@@ -501,7 +501,7 @@
 	cap-sdio-irq;
 	disable-wp;
 	keep-power-in-suspend;
-	max-frequency = <208000000>;
+	max-frequency = <150000000>;
 	mmc-pwrseq = <&sdio_pwrseq>;
 	non-removable;
 	num-slots = <1>;
